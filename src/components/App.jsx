@@ -1,15 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { lazy } from "react";
-import SharedLayout from "./SharedLayout/SharedLayout";
-const HomePage = lazy(() => import("../pages/HomePage.jsx"));
+import SharedLayout from "./SharedLayout/SharedLayout.jsx";
+const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 
-const MoviesPage = lazy(() => import("../pages/MoviesPage"));
-const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage"));
-const MovieCast = lazy(() => import("./MovieCast/MovieCast"));
-const MovieReviews = lazy(() => import("./MovieReviews/MovieReviews"));
-const NotFound = lazy(() => import("../pages/NotFound"));
-import Loader from "./Loader/Loader";
-import Error from "./Error/Error";
+const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage.jsx"));
+const MovieDetailsPage = lazy(() =>
+  import("../pages/MovieDetailsPage/MovieDetailsPage.jsx")
+);
+const MovieCast = lazy(() => import("./MovieCast/MovieCast.jsx"));
+const MovieReviews = lazy(() => import("./MovieReviews/MovieReviews.jsx"));
+const NotFound = lazy(() => import("../pages/NotFound/NotFound.jsx"));
+import Loader from "./Loader/Loader.jsx";
+import Error from "./Error/Error.jsx";
 import { useState } from "react";
 
 export default function App() {

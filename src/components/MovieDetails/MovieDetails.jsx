@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function MovieDetails({ movieDetails }) {
   function printGenres(movieGenres) {
     const genres = [];
-    movieGenres.map((item) => genres.push(item.name));
+    movieGenres.map(item => genres.push(item.name));
     return genres.join(" ");
   }
 

@@ -1,8 +1,7 @@
-import css from "./SharedStyles.module.css";
-import MovieList from "../components/MovieList/MovieList";
-import { getTrandingMovies } from "../components/tmdbAPI";
+import css from "./HomePage.module.css";
+import MovieList from "../../components/MovieList/MovieList";
+import { getTrandingMovies } from "../../components/tmdbAPI";
 import { useState, useEffect } from "react";
-
 
 export default function HomePage({ toggleLoading, toggleError }) {
   const [trandingMovies, setTrandingMovies] = useState([]);

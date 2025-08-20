@@ -1,7 +1,7 @@
-import SearchMovie from "../components/SearchMovie/SearchMovie";
-import MovieList from "../components/MovieList/MovieList";
+import SearchMovie from "../../components/SearchMovie/SearchMovie";
+import MovieList from "../../components/MovieList/MovieList";
 import { useState, useEffect } from "react";
-import { getMovies } from "../components/tmdbAPI";
+import { getMovies } from "../../components/tmdbAPI";
 import { useSearchParams } from "react-router-dom";
 
 export default function MoviesPage({ toggleLoading, toggleError }) {

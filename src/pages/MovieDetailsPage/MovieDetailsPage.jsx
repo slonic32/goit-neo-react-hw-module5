@@ -1,23 +1,19 @@
 import { useParams, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect, Suspense } from "react";
-import { getMovieDetails } from "../components/tmdbAPI";
-import MovieDetails from "../components/MovieDetails/MovieDetails";
-import GoBack from "../components/GoBack/GoBack";
+import { useState, useEffect, Suspense, useRef } from "react";
+import { getMovieDetails } from "../../components/tmdbAPI";
+import MovieDetails from "../../components/MovieDetails/MovieDetails";
+import GoBack from "../../components/GoBack/GoBack";
 
 export default function MovieDetailsPage({ toggleLoading, toggleError }) {
   const [movieDetails, setMovieDetails] = useState(undefined);
   const { movieId } = useParams();
-  const [previousPage, setPreviousPage] = useState(null);
+
   const location = useLocation();
-  if (location.state) {
-    if (previousPage !== location.state.from) {
-      setPreviousPage(location.state.from);
-    }
-  }
+  const backLink = useRef(location.state ? location.state.from : "/movies");
 
   const goToURL = useNavigate();
   function goBack() {
-    goToURL(previousPage);
+    goToURL(backLink.current);
   }
 
   useEffect(() => {
@@ -38,7 +34,7 @@ export default function MovieDetailsPage({ toggleLoading, toggleError }) {
 
   return (
     <>
-      {previousPage && <GoBack handleClick={goBack} />}
+      {<GoBack handleClick={goBack} />}
       {movieDetails && <MovieDetails movieDetails={movieDetails} />}
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
