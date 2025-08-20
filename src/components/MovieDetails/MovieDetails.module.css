@@ -1,0 +1,17 @@
+.movieDetails {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.line {
+  margin-bottom: 24px;
+}
+
+.navblock {
+  margin-bottom: 24px;
+}
+
+.marginBottom {
+  margin-bottom: 24px;
+}

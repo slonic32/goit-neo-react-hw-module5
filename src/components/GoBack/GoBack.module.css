@@ -1,0 +1,16 @@
+.goback {
+  margin-bottom: 24px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+}
